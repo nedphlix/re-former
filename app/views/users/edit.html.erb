@@ -1,0 +1,12 @@
+<%= form_for @user do |f| %>
+	<%= f.label 'Pick a cool user name: ' %>
+	<%= f.text_field :name, placeholder: "e.g. Jenny95" %><br>
+
+	<%= f.label 'Your email address: ' %>
+	<%= f.email_field :email, placeholder: "e.g. jennifer@github.com" %><br>
+
+	<%= f.label 'Choose a password: ' %>
+	<%= f.password_field :password, placeholder: "e.g. 1234" %><br>
+
+	<%= f.submit 'Let\'s do it!' %>
+<% end %>
