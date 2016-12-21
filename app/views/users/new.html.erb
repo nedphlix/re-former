@@ -1,0 +1,32 @@
+<!--
+	<form action="/users" method="post" accept-charset="UTF-8">
+		<input type="text" name="user[name]">
+		<input type="email" name="user[email]">
+		<input type="password" name="user[password]">
+
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<input type="submit" value="Submit!">
+	</form>
+-->
+
+<!--
+	<%= form_tag('/users') do %>
+		<%= text_field_tag(:name) %>
+		<%= email_field_tag(:email) %>
+		<%= password_field_tag(:password) %>
+		<%= submit_tag "Submit!" %>
+	<% end %>
+-->
+
+<%= form_for @user do |f| %>
+	<%= f.label 'Pick a cool user name: ' %>
+	<%= f.text_field :name, placeholder: "e.g. Jenny95" %><br>
+
+	<%= f.label 'Your email address: ' %>
+	<%= f.email_field :email, placeholder: "e.g. jennifer@github.com" %><br>
+
+	<%= f.label 'Choose a password: ' %>
+	<%= f.password_field :password, placeholder: "e.g. 1234" %><br>
+
+	<%= f.submit 'Let\'s do it!' %>
+<% end %>
